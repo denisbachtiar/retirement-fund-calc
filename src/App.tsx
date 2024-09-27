@@ -10,13 +10,12 @@ function App() {
 
   const calculate = () => {
     let res = 0;
+    let x = nominalInvest * 12;
 
     for (let i = 0; i < yearTimes; i++) {
-      let x = nominalInvest * 12;
       let y = x + res;
-      let xy = y * (yearlyReturn / 100); 
-      y = xy + y;
-      res = y; 
+      let xy = y + (y * (yearlyReturn/100))
+      res = xy; 
     }
 
     setResult(res);
